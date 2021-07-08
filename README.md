@@ -104,3 +104,54 @@
 
 > href : Hyper Text Reference - 이동하고자 하는 목적지 위치/경로를 표시하는 속성
 > - url(Uniform Resource locator) : 이동하고자 하는 목적지의 위치/경로 값
+
+### 목록 요소(List Element)
+> 순서있는 / 순서없는 목록
+> 
+> ol(Ordered List), ul(Inordered List), li(List Item)
+
+> 설명목록
+> 
+> 주제와 설명이 한 세트로 구성되는 목록
+> 
+> dl(Description List), dt(Description Term), dd(Description Data)
+
+### Tavle Element(https://www.tablesgenerator.com/html_tables)
+> table, thead, tbody, tfoot, tr, th, td, caption 
+
+```
+<table>
+  <caption></caption>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+> table : table의 영역을 설정
+> 
+> thead, tbody, tfoot : table 데이터의 그룹을 표시
+> 
+> tr(table row) : 행
+> 
+> th(table head) : 제목 칸(셀)
+> 
+> td(table data) : 데이터 칸(셀)
+> 
+> caption : 테이블의 제목, 설명
+> 
+
+
+
