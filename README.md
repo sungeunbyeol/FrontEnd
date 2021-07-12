@@ -206,7 +206,7 @@ root 상대경로
 > 
 > div(division) / span
 > 
-> - 단순 영역 구분요소
+> - 단순 영역구분 요소(Container Element)
 
 ### 폼 요소
 
