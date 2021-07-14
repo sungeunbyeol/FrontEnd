@@ -395,7 +395,7 @@ padding:20px 30px 40px 30px; : top right bottom left (top부터 시계방향으�
 > top, right, bottom, left
 
 ```
-border:1px solid #fff; EX) #aa5500 => #a50 (RGB에서 같은색이 똑같을 때 줄여줄 수 있다.)
+border:1px solid #fff; Ex) #aa5500 => #a50 (RGB에서 같은색이 똑같을 때 줄여줄 수 있다.)
 
 border-width:1px;
 border-style:solid;
@@ -407,7 +407,32 @@ border-bottom:1px solid #fff;
 border-left:1px solid #fff;
 ```
 
+### 박스 모델 크기 계산
 
+> width/height, padding, border, margin 모두 별개의 요소
+
+> Ex) 박스의 전체너비 : 300px, padding:20px; 4방향, border:1px; 4방향, margin:30px; 4방향
+```
+div{
+  padding:20px;
+  border:1px solid #fff;
+  margin:30px;
+  width:258px; (padding 왼쪽,오른쪽 더하고/border 왼쪽,오른쪽 더한값을 전체너비에서 빼준 값이 width가 됨)
+               (padding rigth+left=20+20=40 / border right+left=1+1=2 / 총 42를 빼주면 width 값이 나온다는 의미)
+}
+```
+
+> box-sizing:border-box;(기본값 : content-box)
+
+```
+div{
+  padding:20px;
+  border:1px solid #fff;
+  margin:30px;
+  width:300px;
+  box-sizing:border-box; (박스사이즈를 위에처럼 계산하고 빼면 전체너비를 한번에 보기 어려우니까 아예 border size로 적어서 다 알아)
+}
+```
 
 
 
