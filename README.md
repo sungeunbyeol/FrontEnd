@@ -357,6 +357,58 @@ h1 {color:red;font-size:10px;}
 > - Block 요소의 경우 px, % 단위가 적용됨(width 사용시)
 > - Inline 요소의 경우 px, % 단위 모두 적용되지 않음(width 사용시)
 
+### padding
+
+> padding-top
+> 
+> padding-rigth
+> 
+> padding-botton
+> 
+> padding-left
+> 
+> padding 축약표현
+
+```
+padding:20px; : 모든방향
+
+padding:20px 30px; : top/bottom right/left
+
+padding:20px 30px 40px; : top right/left bottom
+
+padding:20px 30px 40px 30px; : top right bottom left (top부터 시계방향으로 돌면 알기 쉬움)
+```
+
+### margin
+
+> padding과 사용방법이 같음
+
+> margin 겹침
+> - 위아래 연이어 배치된 박스의 위/아래 margin이 겹쳐서 큰 수치의 margin만 표현되는 것
+
+### border
+
+> border
+> 
+> width, style, color
+> 
+> top, right, bottom, left
+
+```
+border:1px solid #fff; EX) #aa5500 => #a50 (RGB에서 같은색이 똑같을 때 줄여줄 수 있다.)
+
+border-width:1px;
+border-style:solid;
+border-color:#fff;
+
+border-top:1px solid #fff;
+border-rigth:1px solid #fff;
+border-bottom:1px solid #fff;
+border-left:1px solid #fff;
+```
+
+
+
 
 
 
