@@ -430,17 +430,31 @@ div{
   border:1px solid #fff;
   margin:30px;
   width:300px;
-  box-sizing:border-box; (박스사이즈를 위에처럼 계산하고 빼면 전체너비를 한번에 보기 어려우니까 아예 border size로 적어서 다 알아)
+  box-sizing:border-box; (박스사이즈를 width나 height 넓이에 맞추기 위해 사용함)
 }
 ```
 
 ### Block, Inline에 박스모델 적용
 
 > Block : 박스모델의 모든 요소가 적용 가능
+> 
 > Inline : 박스모델의 width/height, 상하 margin 이 제대로 적용되지 않음
 
+### display 속성
 
+> 박스(영역)의 block, inline 속성을 변형
 
+> display : inline => 박스 속성이 inline으로 변형
+> 
+> display : block => 박스 속성이 block으로 변형
+> 
+> display : inline-block => 박스속성 inline 요소 속성(가로길이가 자식요소에 맞춰짐), block 요소의 속성(박스 모델 적용 가능) 모두 가지고 있음
+
+### 가로 배치 방법
+
+- float
+- flex
+- grid
 
 
 
