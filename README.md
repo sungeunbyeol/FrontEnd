@@ -321,7 +321,7 @@ h1 {color:red;font-size:10px;}
 
 ### Font CSS
 
-> font-family : 'Times New Roman', Times, serif; // ''를 사용하는 의미는 공백으로 인해 컴퓨터가 하나의 단어로 인식을 못하기 때문에 ''로 묶어주는 것이다.
+> font-family : 'Times New Roman', Times, serif; (''를 사용하는 의미는 공백으로 인해 컴퓨터가 하나의 단어로 인식을 못하기 때문에 ''로 묶어주는 것이다.)
 > 
 > - font fallback : 랜더링시 폰트를 찾지 못했을 때 다른 폰트를 사용하도록 하는 대비책
 > - web safe : 웹 페이지가 표시될 때 표시하고자 했던 폰트가 제대로 보일 수 있도록 선택
@@ -386,9 +386,9 @@ padding:20px 30px 40px 30px; : top right bottom left (top부터 시계방향으�
 > margin 겹침
 > - 위아래 연이어 배치된 박스의 위/아래 margin이 겹쳐서 큰 수치의 margin만 표현되는 것
 > 
->    (이럴 경우 해결할 수 있는 방법: 한 부분만 마진을 준다. 근데 간혹 마진겹침이 필요한 부분이 있기도 함.)
+> /* 이럴 경우 해결할 수 있는 방법: 한 부분만 마진을 준다. 근데 간혹 마진겹침이 필요한 부분이 있기도 함.) */
 >   
->    (Ex- 위에박스 margin-bottom:50px 아래박스 margin-top:30px 하지 말고 위에 박스에만 margin-bottom:50px을 준다.)
+> /* (Ex- 위에박스 margin-bottom:50px 아래박스 margin-top:30px 하지 말고 위에 박스에만 margin-bottom:50px을 준다.) */
 
 ### border
 
@@ -421,8 +421,9 @@ div{
   padding:20px;
   border:1px solid #fff;
   margin:30px;
-  width:258px; (padding 왼쪽,오른쪽 더하고/border 왼쪽,오른쪽 더한값을 전체너비에서 빼준 값이 width가 됨)
-               (padding rigth+left=20+20=40 / border right+left=1+1=2 / 총 42를 빼주면 width 값이 나온다는 의미)
+  width:258px; 
+  /* padding 왼쪽,오른쪽 더하고/border 왼쪽,오른쪽 더한값을 전체너비에서 빼준 값이 width가 됨 */
+  /* padding rigth+left=20+20=40 / border right+left=1+1=2 / 총 42를 빼주면 width 값이 나온다는 의미 */
 }
 ```
 
@@ -490,6 +491,143 @@ CSS
   clear:both;
 }
 ```
+
+### 가상 클래스(Pseudo Class)
+
+> 선택자(요소)의 상태를 정의
+>
+> 여러 요소중 특정 요소를 지정
+
+```
+상태 정의
+
+a:link{
+  color:red;
+}
+a:visited{
+  color:blue;
+}
+a:hover{
+  color:green;
+}
+a:active{
+  color:yellow;
+}
+
+※ a 태그의 pseudo class는 위 순서와 동일하게 코딩
+
+
+특정 요소 지정
+
+p:first-child{ /* 첫번째 자식요소 */
+  color:red;
+}
+p:last-child{ /* 마지막 자식요소 */
+  color:blue;
+}
+p:nth-child(3){ /* 3번째 순서를 의미함 */
+  color:green;
+}
+p:nth-child(4n){ /* 4의 배수 전체를 의미함 */
+  color:pink;
+}
+```
+
+### 가상 요소(Pseudo Element)
+
+> HTML에 직접 입력하는 것이 아닌 CSS에서 랜더링 시 생성되는 가상 요소
+
+```
+div::before{
+  content:"Hello World";
+}
+
+div::after{
+  content:""; /* 이건 박스 만들어서 공간 차지하도록 할 때 쓰는 것. class="clearfix" case:both 대신이라고 생각하면됨. */
+  display:block;
+  width:100px;
+  height:30px;
+}
+```
+
+### 투명도
+
+> transparent : 투명한
+> - 투명색 적용
+> 
+> alpha : 추가색
+> - rgba() 함수 사용 : color에만 투명도 적용
+> 
+> opacity : 불투명함
+> - Element(요소)에 투명도 적용 /* 그래서 자식요소에 있는 모든것들이 같이 투명해짐 */
+
+```
+div{
+  background-color:transparent;
+}
+
+div{
+  opacity:0.7;(0.0 ~ 1.0) /* 숫자가 작으면 투명해지고 커지면 불투명해진다 */
+}
+
+div{
+  background-color:rgb(255,255,255); /* rgb() : rgb함수 */
+}
+
+div{ 
+  background-color:rgba(255,255,255,0.6); /* a: alpha (0.0 ~ 1.0) */
+} /* 십진수로 rgb를 표현할 때 alpha로 투명도 지정하면 됨. 숫자가 작으면 투명, 커질수록 불투명 */
+```
+
+### 배경이미지
+
+> background-image
+> - 배경이미지 표현
+> - 배경이미지가 반복되어 영역을 모두 채움(기본속성)
+
+> background-repeat
+> - repeat-x : x 방향으로만 반복
+> - repeat-y : y 방향으로만 반복
+> - no-repeat : 반복 없음
+
+> background-position
+> - left, center, right
+> - top, center, bottom
+```
+div{
+  background-position:100px 200px; /* 앞:가로방향, 뒤:세로방향 */
+}
+```
+
+> background-attachment
+> - 배경 고정
+```
+div{
+  background-attachment:fixed;
+}
+```
+※ 배경색, 배경이미지 모두 content영역과 padding영역에 적용됨(border, margin에는 적용이 안됨)
+
+### 이미지 표현 방법
+
+> 콘텐트로 표현
+> - img 태그로 표현
+> 
+> 디자인요소로 표현
+> - background로 표현
+
+> IR(Image Replacement) 기법
+> - 화면의 표시는 이미지로 표시, 실제 콘텐트는 텍스트의 형태
+
+> 가상요소를 사용해서 배경표현 기법
+> - 가상요소에 디자인 이미지를 적용해서 화면에 표시
+
+
+
+
+
+
+
 
 
 
