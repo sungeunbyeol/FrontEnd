@@ -385,6 +385,10 @@ padding:20px 30px 40px 30px; : top right bottom left (top부터 시계방향으�
 
 > margin 겹침
 > - 위아래 연이어 배치된 박스의 위/아래 margin이 겹쳐서 큰 수치의 margin만 표현되는 것
+> 
+>    (이럴 경우 해결할 수 있는 방법: 한 부분만 마진을 준다. 근데 간혹 마진겹침이 필요한 부분이 있기도 함.)
+>   
+>    (Ex- 위에박스 margin-bottom:50px 아래박스 margin-top:30px 하지 말고 위에 박스에만 margin-bottom:50px을 준다.)
 
 ### border
 
